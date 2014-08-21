@@ -3,3 +3,5 @@ node_modules
 .sass-cache
 app/bower_components
 app/templates/showcase/show_components/*.hbs
+dist/index.html
+dist/showcase

@@ -33,11 +33,13 @@ Modal component.
       }
     },
     becameVisible: function() {
+      Em.$('body').addClass('modal-open');
       if (this.get("backdrop")) {
         return this.appendBackdrop();
       }
     },
     becameHidden: function() {
+      Em.$('body').removeClass('modal-open');
       if (this._backdrop) {
         return this._backdrop.remove();
       }
@@ -79,6 +81,7 @@ Modal component.
     },
     willDestroyElement: function() {
       var name;
+      Em.$('body').removeClass('modal-open');
       this.removeHandlers();
       name = this.get('name');
       if (name == null) {
